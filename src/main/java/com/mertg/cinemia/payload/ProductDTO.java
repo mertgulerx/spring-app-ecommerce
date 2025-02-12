@@ -1,5 +1,7 @@
 package com.mertg.cinemia.payload;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,6 +17,8 @@ public class ProductDTO {
     private String image;
     private Integer quantity;
     private BigDecimal price;
+    @Min(0)
+    @Max(1)
     private BigDecimal discount;
     private BigDecimal specialPrice;
 }
