@@ -6,6 +6,7 @@ import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.validator.constraints.Email;
 
 import java.util.ArrayList;
@@ -41,6 +42,7 @@ public class Address {
     @Size(min = 3, message = "Zipcode must be at least 3 characters")
     private String zipcode;
 
+    @ToString.Exclude
     @ManyToMany(mappedBy = "addresses")
     private List<User> users = new ArrayList<>();
 }
