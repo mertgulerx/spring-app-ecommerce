@@ -8,11 +8,11 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 public class UserInfoResponse {
     private Long id;
     private String username;
-    private String jwtToken;
+    //private String jwtToken;
     private List<String> roles;
 
     public UserInfoResponse(Long id, String username, List<String> roles) {
