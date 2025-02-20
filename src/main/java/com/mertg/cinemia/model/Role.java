@@ -22,4 +22,8 @@ public class Role {
     @Enumerated(EnumType.STRING) // Default is integer
     @Column(length = 20, name = "role_name")
     private AppRole roleName;
+
+    public Role(AppRole roleName) {
+        this.roleName = roleName;
+    }
 }
