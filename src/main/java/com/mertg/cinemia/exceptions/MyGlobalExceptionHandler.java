@@ -2,7 +2,6 @@ package com.mertg.cinemia.exceptions;
 
 
 import com.mertg.cinemia.payload.APIResponse;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
