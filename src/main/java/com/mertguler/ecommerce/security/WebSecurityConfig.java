@@ -1,8 +1,10 @@
 package com.mertguler.ecommerce.security;
 
+import com.mertguler.ecommerce.model.Address;
 import com.mertguler.ecommerce.model.AppRole;
 import com.mertguler.ecommerce.model.Role;
 import com.mertguler.ecommerce.model.User;
+import com.mertguler.ecommerce.repositories.AddressRepository;
 import com.mertguler.ecommerce.repositories.RoleRepository;
 import com.mertguler.ecommerce.repositories.UserRepository;
 import com.mertguler.ecommerce.security.jwt.AuthEntryPointJwt;
@@ -102,7 +104,7 @@ public class WebSecurityConfig {
 
 
     @Bean
-    public CommandLineRunner initData(RoleRepository roleRepository, UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public CommandLineRunner initData(RoleRepository roleRepository, UserRepository userRepository, PasswordEncoder passwordEncoder, AddressRepository addressRepository) {
         return args -> {
             // Retrieve or create roles
             Role userRole = roleRepository.findByRoleName(AppRole.ROLE_USER)
@@ -159,7 +161,9 @@ public class WebSecurityConfig {
                 admin.setRoles(adminRoles);
                 userRepository.save(admin);
             });
+
         };
+
     }
 
 }
