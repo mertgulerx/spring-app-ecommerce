@@ -1,1 +1,1 @@
-# Ecommerce website using spring 
+ Learning more Spring with creating a E-commerce platform
